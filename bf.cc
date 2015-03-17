@@ -38,11 +38,6 @@ int main(int argc, char** argv) {
 	/** Initial offset: pointing to the beginning of the stack */
 	size_t offset = 0;
 
-	if ( ! stack ) {
-		std::cerr << "No memory" << std::endl;
-		exit(1);
-	}
-
 	/** Store the tokens, to allow looping */
 	std::vector<char> tokens;
 	size_t current_token_index = 0;

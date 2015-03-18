@@ -3,7 +3,7 @@
 #include <stack>
 #include <fstream>
 
-#define STACK_INITIAL_SIZE 30
+#define STACK_INITIAL_SIZE 300
 #define DEAD_CODE_LIMIT 100
 typedef unsigned char byte;
 
@@ -18,7 +18,6 @@ int main(int argc, char** argv) {
 		std::cerr << "Usage: " << argv[0] << " <file_name>" << std::endl;
 		exit(1);
 	}
-
 
 	/** Get the source stream. */
 	std::ifstream source(argv[1]);
@@ -90,7 +89,6 @@ int main(int argc, char** argv) {
 		} else {
 			token = tokens[current_token_index];
 		}
-
 
 		/** If we are ignoring chars... Just process '[' (add to the state stack) and ']' (remove from the state stack) */
 		if ( state == State::WHILE_IGNORING && ! (token == ']' || token == '[') ) {
